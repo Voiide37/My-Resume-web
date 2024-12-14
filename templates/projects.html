@@ -1,0 +1,419 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiphiweNala.org</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+        <style>
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            
+            header {
+                background-color: #1e1e1e;
+                color: #fff;
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            header h1 {
+                margin: 0;
+            }
+            
+            header button {
+                background-color: #0cf8e2;
+                color: #000;
+                padding: 0.5rem 1rem;
+                margin-top: 1rem;
+                border: none;
+                cursor: pointer;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+            
+            header button:hover {
+                background-color: #0abfb0;
+            }
+
+            nav {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #9e25fc;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+            
+            main {
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .project {
+                display: flex;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+            
+            .project-content {
+                padding: 1rem;
+                flex: 1;
+            }
+            
+            .project-content h2 {
+                margin-top: 0;
+                color: #1e1e1e;
+            }
+            
+            .project-content pre {
+                background-color: #f0f0f0;
+                padding: 1rem;
+                overflow-x: auto;
+                border-radius: 5px;
+                white-space: pre-wrap;
+            }
+            
+            .project-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                background-color: #f9f9f9;
+                height: 100%;
+            }
+            
+            .project-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            
+            footer {
+                background-color: #1e1e1e;
+                color: #fff;
+                text-align: center;
+                padding: 1rem;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+
+            header {
+                background-color: #1e1e1e; 
+                color: #9e25fc;
+                padding: 1rem;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+    
+            header img {
+                width: 50px; 
+                height: 50px; 
+                border-radius: 50%; 
+                position: absolute;
+                left: 20px; 
+            }
+
+            .title-container {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+    
+            .title-section {
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 1.5rem 2rem;
+                border-radius: 10px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 80%;
+            }
+    
+            .title-section h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+    
+            .title-section p {
+                font-size: 1.2rem;
+                margin-top: 0;
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-image: url("{% static 'images/storm.jpg' %}");
+                background-size: cover;
+                background-position: center;
+                filter: blur(5px); 
+                z-index: -1;
+                opacity: 0.75; 
+              }
+            
+        </style>
+</head>
+<body>
+
+    <header>
+        <img src="{% static 'images/Me.jpg' %}" alt="Logo">
+        <h1>Welcome to My Website</h1>
+
+        <nav>
+            <a href="{% url 'index' %}">About Me</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'projects' %}">Projects</a>
+        </nav>
+
+    </header>
+</br>
+    
+<div class="title-container">
+    <div class="title-section">
+        <h1>My Projects Showcase</h1>
+        <p>A collection of my projects and their README files.</p>
+    </div>
+</div>
+
+</br>
+
+    <main id="projectsContainer">
+        
+        <section class="project">
+            <div class="project-content">
+                <h2>Website_Automator</h2>
+                <p>The project Website Automator on GitHub is a Python script designed to automate the opening of predefined sets of websites in your default web browser.</p>
+                <pre>
+<code>
+    # How to use the script
+
+    ## Features
+    ### Predefined URL Sets:
+    
+    -personal: Contains links to personal websites like YouTube, Twitch, etc.
+    
+    -work: A placeholder for work-related links (can be customized).
+    ### Error Handling:
+    
+    -Checks for missing or invalid set names.
+    
+    -Handles errors if URLs fail to open.
+    
+    ## Requirements
+    -Python: Version 3.6 or higher.
+    
+    -Web Browser: The script uses your system's default web browser to open URLs.
+    
+    ## Usage
+    ### 1.Clone the Repository:
+    git clone "repository-url"
+    
+    cd "repository-directory"
+    
+    ### 2.Run the Script:
+    Provide a set name (personal or work) as a command-line argument:
+    
+    -python script.py personal
+    
+    This will open all the URLs listed under the personal category.
+    ### 3.Example Commands:
+    
+    Open personal URLs:
+    
+    -python script.py personal
+    
+    Open work URLs:
+    
+    -python script.py work
+    
+    ## Error Messages
+    No Set Name Provided:
+    
+    -Error: No set name provided. Please provide 'personal' or 'work'.
+    
+    Invalid Set Name Provided:
+    
+    -Error: 'invalid_set' is not a valid set name. Choose from: personal, work
+    
+    No URLs in the Selected Set:
+    
+    -No URLs to open in this set.
+    
+    Failed to Open URL:
+    
+    -Failed to open https://example.com: error message
+    
+    ## Customization
+    You can modify the URLS dictionary in the script to include more categories or URLs:
+    
+    python
+    URLS = {
+    
+        "personal": [
+            "https://www.youtube.com",
+            "https://www.twitch.tv"
+        ],
+        "work": [
+            "https://mail.google.com",
+            "https://www.github.com"
+        ]
+    }
+</code>
+                </pre>
+            </div>
+            <div class="project-image">
+                <img src="{% static 'images/web_screenshot.png' %}" alt="Project 1 Screenshot">
+            </div>
+        </section>
+
+        <section class="project">
+            <div class="project-content">
+                <h2>download_cleaner</h2>
+                <p>A Python script designed to organize and tidy up the contents of your Downloads folder by sorting files into specific directories based on their file types</p>
+                <pre>
+<code>
+    # Downloads Folder Cleaner Script
+    This Python script organizes your `Downloads` folder by automatically sorting files into categorized folders based on their file types.
+    
+    ## 📝 Features
+    
+    ### Automatic Categorization:
+     Sorts files into categories such as Images, Documents, Videos, Music, and more.
+    
+    ### Creates Folders:
+     Automatically creates folders for each category if they don't exist.
+    
+    ### Handles Various File Types:
+     Supports common file types like `.jpg`, `.pdf`, `.mp4`, `.exe`, and more.
+    
+    ### Error Handling: 
+    Gracefully handles any errors that occur during the file-moving process.
+    
+    ## 📁 File Categories
+    The following file categories are supported:
+    
+    Images: `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.svg`, `.webp`
+    
+    Documents: `.pdf`, `.docx`, `.doc`, `.txt`, `.pptx`, `.xlsx`, `.csv`
+    
+    Videos: `.mp4`, `.avi`, `.mov`, `.mkv`, `.flv`
+    
+    Music: `.mp3`, `.wav`, `.aac`, `.flac`, `.ogg`
+    
+    Archives: `.zip`, `.rar`, `.tar`, `.gz`, `.7z`
+    
+    Executables: `.exe`, `.msi`, `.bat`
+    
+    Installers: `.dmg`, `.pkg`
+    
+    Code Files: `.py`, `.js`, `.html`, `.css`, `.java`, `.cpp`, `.cs`
+    
+    Others: Files that don't match any known category.
+    
+    ## 🚀 How to Use
+    ### 1. Prerequisites
+    
+    Ensure you have Python installed on your system. You can download it from python.org.
+    
+    ### 2. Running the Script
+    
+    1. Save the script to a `.py` file, for example: `clean_downloads.py`
+    
+    2. Open a terminal or command prompt.
+    
+    3. Navigate to the script's location and run:
+    ```
+        python clean_downloads.py 
+    ```
+    
+    ### 3. What It Does
+    Scans your `Downloads` folder.
+    
+    Creates categorized folders if they don't already exist.
+    
+    Moves files into the appropriate folders based on their file types.
+    
+    Prints messages indicating the files being moved.
+    
+    ## ⚠️ Important Notes
+    ### Backup: 
+    Always back up important files before running any script that manipulates your filesystem.
+    
+    ### Customization: 
+    You can customize the file categories by modifying the `FILE_CATEGORIES` dictionary in the script.
+    
+    ## 🛠️ Customizing the Script
+    You can add or modify categories by editing the `FILE_CATEGORIES` dictionary. For example:
+    
+    ```python
+    FILE_CATEGORIES = {
+        "Images": [".jpg", ".png"],
+        "Custom Category": [".xyz"]
+    }
+    ```
+    ## 📜 Sample Output
+    
+    ```
+    Moved 'photo.jpg' to 'Images' folder.
+    Moved 'report.pdf' to 'Documents' folder.
+    Moved 'song.mp3' to 'Music' folder.
+    Downloads folder cleaning complete!
+    ```
+    
+    ## 🐞 Troubleshooting
+    ### Permission Errors: 
+    Ensure you have the necessary permissions to move files in the Downloads directory.
+    
+    ### File in Use:
+     Close any programs that may be using files in the Downloads folder before running the script.
+    
+    ### 🧹 Keep your Downloads folder organized and clutter-free!
+</code>
+                </pre>
+            </div>
+            <div class="project-image">
+                <img src="{% static 'images/cleaner.png' %}" alt="Project 2 Screenshot">
+            </div>
+
+            # you can add more prjects here
+
+        </section> 
+    </main>
+
+</br>
+</br>
+
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
+    
+</body>
+</html>

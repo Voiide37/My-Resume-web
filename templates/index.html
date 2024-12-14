@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiphiweNala.org</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            color: #333;
+        }
+
+        header {
+            background-color: #1e1e1e; 
+            color: #0cf8e2;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        header img {
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            position: absolute;
+            left: 20px; 
+        }
+
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #0cf8e2;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+            z-index: 1; 
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap; 
+        }
+
+        .about-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+            display: inline-block;
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        img.profile-pic {
+            width: 200px;
+            height: auto;
+            border: 5px solid #fff; 
+            border-radius: 10px;    
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 1.5rem;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("{% static 'images/storm.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px); 
+            z-index: -1;
+            opacity: 0.75; 
+          }
+        
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <img src="{% static 'images/Me.jpg' %}" alt="Logo">
+        <h1>Welcome to My Website</h1>
+
+        <nav>
+            <a href="{% url 'index' %}">About Me</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'projects' %}">Projects</a>
+        </nav>
+
+    </header>
+</b>  
+    <main>
+        <div class="about-container">
+            <img src="{% static 'images/Me.jpg' %}" alt="Profile Picture" class="profile-pic">
+    </b>
+            <div class="about-box">
+                <h2>About Me</h2>
+                <p>Hello! I’m a 22-year-old passionate developer with a strong enthusiasm for coding and technology. While my interests are diverse, I particularly enjoy exploring Korean aesthetics and Japanese culture, which inspire my creativity and drive for continuous learning.</p>
+                <p>I graduated from high school and pursued further education at New Bridge College in 2021-2023. However, my passion for software development led me to pivot from formal schooling and instead focus on self-driven learning. In just four months, I successfully completed an intensive backend development course, sharpening my skills and gaining a deep understanding of the field.</p>
+                <p>I have a solid grasp of various coding languages and technologies, including Python (my language of choice), HTML, CSS, Django, and Object-Oriented Programming (OOP). Additionally, I am proficient in version control with GIT and GitHub, and have experience automating tasks using Python to streamline processes and boost efficiency.</p>
+                <p>I am constantly striving to improve my knowledge and skill set, embracing the challenges of programming with determination and passion. Whether building web applications or automating tedious tasks, I am driven to create practical, elegant solutions with Python and other technologies.</p>
+                <p>I am currently expanding my knowledge of Python and Django, exploring new ideas and technologies, while actively seeking employment opportunities to apply my skills in a professional setting.</p>
+                <p>I pray for your good health, Hope to hear from you soon.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
+
+</body>
+</html>

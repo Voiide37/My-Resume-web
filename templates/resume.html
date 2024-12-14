@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiphiweNala.org</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #89b4fa;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #11111b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    header {
+      background-color: #1e1e1e; 
+      color: #44ff8b;
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    header img {
+      width: 50px; 
+      height: 50px; 
+      border-radius: 50%; 
+      position: absolute;
+      left: 20px; 
+    }
+
+    nav {
+      margin: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #44ff8b;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #44ff8b;
+    }
+
+    .header p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #44ff8b;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #44ff8b;
+      font-size: 24px;
+    }
+
+    .work-item, .project-item, .education-item {
+      margin-bottom: 20px;
+    }
+
+    .work-item h3, .project-item h3, .education-item h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #44ff8b;
+    }
+
+    .timeframe {
+      font-style: italic;
+      color: #a6adc8;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .skills span {
+      background: #313244;
+      color: #cdd6f4;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url("{% static 'images/storm.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px); 
+      z-index: -1;
+      opacity: 0.75; 
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="{% static 'images/Me.jpg' %}" alt="Logo">
+    <h1>Welcome to My Website</h1>
+
+    <nav>
+        <a href="{% url 'index' %}">About Me</a>
+        <a href="{% url 'resume' %}">Resume</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'projects' %}">Projects</a>
+    </nav>
+
+</header>
+
+  <div class="container">
+    <div class="header">
+      <h1>Siphiwe Daniel Nala</h1>
+      <p>Email: sdvoiide@gmail.com | Address: 31 anleno road, Durban</p>
+    </div>
+
+    <section>
+      <h2>Work Experience</h2>
+      <div class="work-item">
+        <h3>Personal projects</h3>
+        <p class="timeframe">Dec 2024 - Present</p>
+        <ul>
+          <li>Developing personal projects to grow my skills and become a better developer</li>
+          <li>Going to keep making personal projects to actively make my life better.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Personal Projects</h2>
+      <div class="project-item">
+        <h3>Website_Automator</h3>
+        <p>The project Website Automator on GitHub is a Python script designed to automate the opening of predefined sets of websites in your default web browser.</p>
+        <p><strong>Technologies:</strong> Python</p>
+        <p><a href="#">View Projects Page</a></p>
+      </div>
+
+      <div class="project-item">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio showcasing my an About me, Resume, Projects and skills.</p>
+        <p><strong>Technologies:</strong> HTML, CSS, Python</p>
+        <p><a href="#">View Projects Page</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>The Complete 2025 Backend Development Bootcamp - Python</h3>
+        <p class="timeframe">Udemy, 2024 - 2024</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Python</span>
+        <span>Python Projects</span>
+        <span>GitHub</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Git</span>
+        <span>SQL</span>
+        <span>Automation</span>
+        <span>Django Core</span>
+        <span>Django Deployment</span>
+        <span>Django Authentication</span>
+        <span>Basics of Programming</span>
+        <span>Object Oriented Programing</span>
+      </div>
+    </section>
+  </div>
+
+</br>
+</br>
+
+  <footer>
+    &copy; 2024 My Website. All rights reserved.
+</footer>
+
+</body>
+</html>

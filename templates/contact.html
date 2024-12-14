@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiphiweNala.org</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            color: #333;
+        }
+
+        header {
+            background-color: #1e1e1e; 
+            color: #a599b5;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        header img {
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            position: absolute;
+            left: 20px; 
+        }
+
+        nav {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #a599b5;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+            z-index: 1; 
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        img.profile-pic {
+            width: 200px;
+            height: auto;
+            border: 5px solid #fff; 
+            border-radius: 10px;    
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 1.5rem;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("{% static 'images/storm.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px); 
+            z-index: -1;
+            opacity: 0.75; 
+          }
+
+        .contact-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            max-width: 400px;
+            margin: 2rem auto;
+            text-align: left; 
+        }
+
+        .contact-box h2 {
+            text-align: center; 
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .contact-info p {
+            margin: 0;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <img src="{% static 'images/Me.jpg' %}" alt="Logo">
+        <h1>Welcome to My Website</h1>
+
+        <nav>
+            <a href="{% url 'index' %}">About Me</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'projects' %}">Projects</a>
+        </nav>
+
+    </header>
+</b>  
+    <main>
+        <div class="contact-box">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <img src="{% static 'images/gmail-logo.jpg' %}" alt="Email Icon">
+                <p>My Gmail - sdvoiide@gmail.com</p>
+            </div>
+            <div class="contact-info">
+                <img src="{% static 'images/number.jpg' %}" alt="Phone Icon">
+                <p>My Phone Number - 079 612 9674 /062 417 4439</p>
+            </div>
+            <div class="contact-info">
+                <img src="{% static 'images/Whatsapp.jpg' %}" alt="Whatsapp Icon">
+                <p>WhatsApp Number - 079 612 9674</p>
+            </div>
+            <div class="contact-info">
+                <img src="{% static 'images/Instagram.jpg' %}" alt="Instagram Icon">
+                <p>Instagram - <a href="https://www.instagram.com/siphiwedanielnala" target="_blank">My Instagram Profile</a></p>
+            </div>
+            <div class="contact-info">
+                <img src="{% static 'images/Facebook.jpg' %}" alt="Facebook Icon">
+                <p>Facebook - <a href="https://www.facebook.com/profile.php?id=100010861686549" target="_blank">My Facebook Profile</a></p>
+            </div>
+            <div class="contact-info">
+                <img src="{% static 'images/discord.jpg' %}" alt="Discord Icon">
+                <p>Discord - <a href="http://discordapp.com/users/848685006016348180" target="_blank">My Discord Profile</a></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
+
+</body>
+</html>
